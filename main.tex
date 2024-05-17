@@ -1,11 +1,28 @@
 \documentclass[12pt, aspectratio=169]{beamer}
 
+\usepackage{bookmark}
+
+\usepackage{mathtools}
+% \usepackage{amsmath}    % already loaded by mathtools
+\usepackage{amssymb}
+\usepackage{amsfonts}
+
+\usepackage{upquote}
+\usepackage{microtype}
+\UseMicrotypeSet[protrusion]{basicmath}    % disable protrusion for tt fonts
+
+% \usepackage{float}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{enumerate}
+\usepackage{caption}
+% \usepackage{subcaption}
+% \usepackage{footnotehyper}
+
 \usepackage{appendixnumberbeamer}
+
 \usepackage{natbib}
 \bibliographystyle{apalike}
-
-
-\input{header}
 
 \definecolor{airforceblue}{rgb}{0.36, 0.54, 0.66}
 \let\oldcite=\cite
@@ -14,6 +31,10 @@
 \renewcommand{\citet}[1]{\textcolor{airforceblue!110}{\oldcitet{#1}}}
 \let\oldcitep=\citep
 \renewcommand{\citep}[1]{\textcolor{airforceblue!110}{\oldcitep{#1}}}
+
+
+\input{header}
+
 
 \title{Test slides}
 \author{Shazid}
@@ -46,7 +67,7 @@
 		\end{frame}
 	\endgroup
 
-    \begin{frame}
+    \begin{frame}{Appendix}
         test appendix frame
     \end{frame}
 
