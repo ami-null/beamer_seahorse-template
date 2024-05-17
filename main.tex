@@ -1,0 +1,53 @@
+\documentclass[12pt, aspectratio=169]{beamer}
+
+\usepackage{appendixnumberbeamer}
+\usepackage{natbib}
+\bibliographystyle{apalike}
+
+
+\input{header}
+
+\definecolor{airforceblue}{rgb}{0.36, 0.54, 0.66}
+\let\oldcite=\cite
+\renewcommand{\cite}[1]{\textcolor{airforceblue!110}{\oldcite{#1}}}
+\let\oldcitet=\citet
+\renewcommand{\citet}[1]{\textcolor{airforceblue!110}{\oldcitet{#1}}}
+\let\oldcitep=\citep
+\renewcommand{\citep}[1]{\textcolor{airforceblue!110}{\oldcitep{#1}}}
+
+\title{Test slides}
+\author{Shazid}
+
+\begin{document}
+	{
+		\setbeamertemplate{footline}{}    % NO FOOTLINE BELOW THESE FRAMES
+		\addtocounter{framenumber}{-2}    % not counting the title page in frame numbers
+
+		\begin{frame}
+			\titlepage
+		\end{frame}
+
+		\begin{frame}{Outline}
+			\tableofcontents[subsectionstyle=hide]
+		\end{frame}
+	}
+
+	\input{body}
+
+	\appendix
+
+	\begingroup
+		\renewcommand{\section}[2]{}%
+		\begin{frame}[allowframebreaks]{References}
+			\Wider{
+				\def\bibfont{\footnotesize}
+				\bibliography{refdb.bib}
+			}
+		\end{frame}
+	\endgroup
+
+    \begin{frame}
+        test appendix frame
+    \end{frame}
+
+\end{document}

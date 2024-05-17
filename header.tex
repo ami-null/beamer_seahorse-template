@@ -1,0 +1,68 @@
+\newcommand\Wider[2][4em]{%
+\makebox[\linewidth][c]{%
+  \begin{minipage}{\dimexpr\textwidth+#1\relax}
+  % \raggedright#2
+  \centering#2
+  \end{minipage}%
+  }%
+}
+
+\usefonttheme{professionalfonts}
+\usecolortheme{seahorse}
+\useinnertheme[shadow]{rounded}
+\useoutertheme{shadow}
+
+\setbeamertemplate{headline}{}
+
+\definecolor{ttc}{RGB}{202, 202, 235}
+\setbeamercolor{block title}{bg=ttc, fg = black}
+\setbeamercolor{block body}{bg=ttc!40, fg = black}
+
+\setbeamercolor{caption name}{fg=normal text.fg}
+\setbeamercolor{page number in head/foot}{fg=gray}
+
+\setbeamercovered{transparent}
+
+\setbeamertemplate{caption}[numbered]
+\setbeamertemplate{caption label separator}{: }
+\setbeamertemplate{items}[circle]
+\setbeamertemplate{itemize items}[circle]
+\setbeamertemplate{enumerate items}[circle]
+\setbeamertemplate{sections/subsections in toc}[circle]
+\setbeamertemplate{frametitle continuation}[from second][(cont.)]
+
+\setbeamertemplate{footline}[frame number]
+\beamertemplatenavigationsymbolsempty
+
+\setbeamertemplate{section page}{
+    \begin{centering}
+    	\begin{beamercolorbox}[sep=12pt,center,shadow=true,rounded=true]{section title}
+    		\usebeamerfont{section title}\insertsection\par%
+    	\end{beamercolorbox}
+    \end{centering}
+}
+
+\AtBeginSection{
+	{
+		\addtocounter{framenumber}{-1}
+		\setbeamertemplate{footline}{}
+		\begin{frame}
+			\sectionpage
+		\end{frame}
+	}
+}
+
+% \AtBeginSection[]{
+    % {
+    % \setbeamertemplate{footline}{}
+    % \addtocounter{framenumber}{-1}
+    % \begin{frame}
+        % \vfill
+        % \centering
+        % \begin{beamercolorbox}[sep=8pt,center,shadow=true,rounded=true]{title}
+        % \usebeamerfont{title}\insertsectionhead\par%
+    % \end{beamercolorbox}
+        % \vfill
+    % \end{frame}
+    % }
+% }
